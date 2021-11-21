@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <div>Demo Application</div>
+  <span class="toolbar-spacer"></span>
+  <div class="user-buttons">
+    <div *ngIf="user">
+      <mat-label>Signed in as {{user.name}}</mat-label>
+      <button mat-button color="primary" (click)="onSignOut()">Sign out</button>
+    </div>
+    <div *ngIf="!user">
+      <button mat-button color="primary" (click)="onSignIn()">Sign in</button>
+      <button mat-button routerLink="/sign-up">Sign Up</button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+

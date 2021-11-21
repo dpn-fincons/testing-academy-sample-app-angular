@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Sign in</h1>
+<div mat-dialog-content class="sign-in-form">
+  <mat-label>Username</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput [formControl]="username" required>
+  </mat-form-field>
+  <mat-label>Password</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput type="password" [formControl]="password" required>
+  </mat-form-field>
+  <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button color="primary" (click)="onSignInClick()" [disabled]="!userForm.valid">Confirm</button>
+</div>

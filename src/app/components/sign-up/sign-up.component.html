@@ -1,0 +1,24 @@
+<div class="sign-up-form">
+  <mat-label>Name</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput [formControl]="name" required>
+  </mat-form-field>
+  <mat-label>Username</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput [formControl]="username" required>
+  </mat-form-field>
+  <mat-label>Password</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput type="password" [formControl]="password" required>
+  </mat-form-field>
+  <mat-label>Repeat Password</mat-label>
+  <mat-form-field appearance="fill">
+    <input matInput type="password" [formControl]="repeatPassword" required>
+  </mat-form-field>
+  <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+</div>
+<div class="sign-up-buttons">
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button color="primary" (click)="onSignUpClick()" [disabled]="!userForm.valid">Sign Up</button>
+</div>
+<a routerLink="/">Back to home</a>
